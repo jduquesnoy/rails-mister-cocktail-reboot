@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 require 'json'
 require 'open-uri'
 puts "Create ingredients"
@@ -16,6 +17,9 @@ ingredient["drinks"].each do |ingredient|
   put "create #{i.name}"i
 end
 
+5.time do
+
+end
 # puts "Destroy ingredients"
 # Ingredient.destroy_all if Rails.env.development?
 
