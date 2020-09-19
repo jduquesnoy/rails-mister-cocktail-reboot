@@ -1,2 +1,10 @@
 <h1>Cocktails#show</h1>
 <p>Find me in app/views/cocktails/show.html.erb</p>
+<h2><%= @cocktail.name %></h2>
+
+<%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
+<%= link_to 'Back', cocktails_path %>
+<%= link_to "Delete #{@cocktail.name}",
+            cocktail_path(@cocktail),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %> 

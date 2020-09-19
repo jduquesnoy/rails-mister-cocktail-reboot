@@ -8,17 +8,36 @@
 require 'faker'
 require 'json'
 require 'open-uri'
-puts "Create ingredients"
+
+puts 'Destroy ingredients'
+Ingredient.destroy_all
+
+puts 'Destroy Cocktails'
+Cocktail.destroy_all
+
+puts 'Create ingredients'
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 ingredient_serialized = open(url).read
 ingredient = JSON.parse(ingredient_serialized)
-ingredient["drinks"].each do |ingredient|
-  i =Ingredient.create(name: ingredient["strIngredient1"])
-  put "create #{i.name}"i
+ingredient['drinks'].each do |ingredient|
+  i = Ingredient.create(name: ingredient['strIngredient1'])
+  puts "create #{i.name}"
 end
 
-5.time do
-
+10.times do
+  cocktail = Cocktail.new(
+    name: Faker::Games::Zelda.character
+  )
+  cocktail.save
+  puts "create #{cocktail.name}"
+  # 5.times do |t|
+  #   dose = Dose.new(
+  #     description: Faker::Lorem.sentence,
+  #     cocktail_id: cocktail.id,
+  #     ingredient_id: Ingredient.find(t)
+  #   )
+  #   puts "create dose #{dose.description} #{dose.cocktail_id} #{dose.ingredient_id}"
+  # end
 end
 # puts "Destroy ingredients"
 # Ingredient.destroy_all if Rails.env.development?
