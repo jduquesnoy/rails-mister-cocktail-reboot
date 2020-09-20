@@ -18,8 +18,8 @@ Cocktail.destroy_all
 puts 'Create ingredients'
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 ingredient_serialized = open(url).read
-ingredient = JSON.parse(ingredient_serialized)
-ingredient['drinks'].each do |ingredient|
+ingredients = JSON.parse(ingredient_serialized)
+ingredients['drinks'].each do |ingredient|
   i = Ingredient.create(name: ingredient['strIngredient1'])
   puts "create #{i.name}"
 end

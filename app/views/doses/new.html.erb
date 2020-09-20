@@ -2,6 +2,6 @@
 <p>Find me in app/views/doses/new.html.erb</p>
 <%= simple_form_for [@cocktail, @dose] do |f| %>
 <%= f.input :description %>
-<%= f.association :ingredient,   as: :check_boxes %>
+<%= f.association :ingredient %>
 <%= f.submit "Submit dose" %>
 <% end %>

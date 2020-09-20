@@ -2,18 +2,18 @@
 <p>Find me in app/views/cocktails/show.html.erb</p>
 <h2><%= @cocktail.name %></h2>
 
-<ul><% @cocktail.doses.each do |dose| %></ul>
-  <li><%= dose.ingredient.name %></li>
-  <li><%= dose.description  %></li>
-  <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>  
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li><%= dose.description  %> - <%= dose.ingredient.name %> | <%= link_to "delete",dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></li>  
+  <% end %>
+</ul>
+<p><%= link_to 'Add a new Dose', new_cocktail_dose_path(@cocktail) %></p>
 
-<% end %>
-<%= link_to 'Add a new Dose', new_cocktail_dose_path(@cocktail) %>
-
-<%= link_to "Edit #{@cocktail.name}", edit_cocktail_path(@cocktail) %> |
+<p><%= link_to "Edit #{@cocktail.name}", edit_cocktail_path(@cocktail) %> |
 
 <%= link_to "Delete #{@cocktail.name}",
             cocktail_path(@cocktail),
             method: :delete,
             data: { confirm: "Are you sure?" } %> |
-<%= link_to 'Back to cocktails page', cocktails_path %> | 
+<%= link_to 'Back to cocktails page', cocktails_path %> </p>
+
