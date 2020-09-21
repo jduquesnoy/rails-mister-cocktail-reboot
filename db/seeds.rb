@@ -8,6 +8,8 @@
 require 'faker'
 require 'json'
 require 'open-uri'
+puts 'Destroy doses'
+Dose.destroy_all
 
 puts 'Destroy ingredients'
 Ingredient.destroy_all
@@ -30,21 +32,20 @@ end
   )
   cocktail.save
   puts "create #{cocktail.name}"
-  # 5.times do |t|
-  #   dose = Dose.new(
-  #     description: Faker::Lorem.sentence,
-  #     cocktail_id: cocktail.id,
-  #     ingredient_id: Ingredient.find(t)
-  #   )
-  #   puts "create dose #{dose.description} #{dose.cocktail_id} #{dose.ingredient_id}"
-  # end
+   5.times do |t|
+   dose = Dose.new(
+      description: Faker::Lorem.sentence,
+      cocktail_id: cocktail.id,
+      ingredient_id: Ingredient.all.sample
+    )
+    puts "create dose #{dose.description} #{dose.cocktail_id} #{dose.ingredient_id}"
+  end
 end
 # puts "Destroy ingredients"
 # Ingredient.destroy_all if Rails.env.development?
 
 # puts "Destroy Cocktails"
 # Cocktail.destroy_all if Rails.env.development?
-
 # puts "Create ingredients"
 # url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 # ingredients = JSON.parse(open(url).read)

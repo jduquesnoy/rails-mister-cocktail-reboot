@@ -18,7 +18,7 @@ class CocktailsController < ApplicationController
   end
 
   def edit
-    @cocktail = Cocktail.find(params[:id])
+    @cocktail = Cocktail.find(params[:id])  # need to instantiate a form for
   end
 
   def update
