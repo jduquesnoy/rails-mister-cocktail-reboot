@@ -32,12 +32,13 @@ end
   )
   cocktail.save
   puts "create #{cocktail.name}"
-   5.times do |t|
-   dose = Dose.new(
+  5.times do
+    dose = Dose.new(
       description: Faker::Lorem.sentence,
       cocktail_id: cocktail.id,
       ingredient_id: Ingredient.all.sample
     )
+    dose.save
     puts "create dose #{dose.description} #{dose.cocktail_id} #{dose.ingredient_id}"
   end
 end
