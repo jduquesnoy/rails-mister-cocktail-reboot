@@ -31,7 +31,7 @@ end
     name: Faker::Games::Zelda.character
   )
   cocktail.save
-  puts "create #{cocktail.name}"
+  puts "create #{cocktail.name} #{cocktail.id}"
   5.times do
     dose = Dose.new(
       description: Faker::Lorem.sentence,
