@@ -1,1 +1,48 @@
 // Specific CSS for your home-page
+// html {
+//   min-height: 100%;
+//   background-image: url(bar.jpg);
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center center;
+// }
+
+h1{
+  color: #ff3bd5;
+  font-weight: 900;
+  font-size: 48px;
+  font-style: italic;
+  font-family: 'Neon';
+  text-shadow: 0 0 10px rgba(255,255,255,0.7);
+}
+
+a{
+  color: yellow;
+  font-style: italic;
+  font-weight: 900;
+  font-family: 'Neon';
+  text-shadow: 0 0 10px rgba(255,255,255,0.7);
+  text-decoration: none;
+  &:hover {
+    color: #0bff01;
+    text-decoration: none;
+  }
+}
+.a-new{
+  font-size: 28px;
+  margin:16px;
+  text-decoration: none;
+}
+
+body{
+  background-image: asset-url('bar3.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+html{
+  height:100%;
+}
