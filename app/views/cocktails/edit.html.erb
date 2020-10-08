@@ -1,8 +1,14 @@
 <div class="container">
-  <h1>Cocktails#edit</h1>
-  <%= simple_form_for(@cocktail) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <h1>Cocktail's changing</h1>
+      <%= simple_form_for(@cocktail) do |f| %>
+          <div class="description-text">New_name</div>
+          <%= f.input :name, label:false %>
+          <div class="description-text">New_photo</div>
+          <%= f.input :photo, as: :file, label:false,class: 'description-btn'  %>
+          <%= f.submit "submit_changings", class: "description-btn"%>
+        <% end %>
+    </div>
+  </div>
 </div>

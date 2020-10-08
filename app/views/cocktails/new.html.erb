@@ -4,9 +4,11 @@
         <h1>New_____Cocktails</h1>
 
         <%= simple_form_for(@cocktail) do |f| %>
-          <%= f.input :name %>
-          <%= f.input :photo, as: :file %>
-          <%= f.submit %>
+          <div class="description-text">Name</div>
+          <%= f.input :name, label:false %>
+          <div class="description-text">photo</div>
+          <%= f.input :photo, as: :file, label:false %>
+          <%= f.submit "submit_the_new_cocktail", class: "description-btn"%>
         <% end %>
       </div>
     </div>
