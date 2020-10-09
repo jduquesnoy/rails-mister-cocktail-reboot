@@ -20,7 +20,7 @@ a{
   color: yellow;
   font-style: italic;
   font-weight: 900;
-  font-family: 'Neon';
+  font-family: 'Montserrat', sans-serif;
   text-shadow: 0 0 10px rgba(255,255,255,0.7);
   text-decoration: none;
   &:hover {
@@ -28,10 +28,11 @@ a{
     text-decoration: none;
   }
 }
-.a-new{
+.a-new > a{
   font-size: 28px;
   margin:16px;
   text-decoration: none;
+  font-family: 'Neon' !important;
 }
 
 body{

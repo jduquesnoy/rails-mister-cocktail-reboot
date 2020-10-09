@@ -7,8 +7,9 @@
       <%= f.input :description, label:false %>
       <div class="description-text">Ingredient</div>
       <%= f.association :ingredient, label:false %>
-      <%= f.submit "Submit_the_dose", class: "description-btn" %>
+      <%= f.submit "Submit the dose", class: "description-btn" %>
       <% end %>
+       <%= link_to "back to #{@cocktail.name}", cocktail_path(@cocktail) %>
     </div>
   </div>
 </div>
