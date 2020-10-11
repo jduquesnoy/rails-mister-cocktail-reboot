@@ -26,22 +26,22 @@ ingredients['drinks'].each do |ingredient|
   puts "create #{i.name}"
 end
 
-10.times do
-  cocktail = Cocktail.new(
-    name: Faker::Games::Zelda.character
-  )
-  cocktail.save
-  puts "create #{cocktail.name} #{cocktail.id}"
-  5.times do
-    dose = Dose.new(
-      description: Faker::Lorem.sentence,
-      cocktail_id: cocktail.id,
-      ingredient_id: Ingredient.all.sample
-    )
-    dose.save
-    puts "create dose #{dose.description} #{dose.cocktail_id} #{dose.ingredient_id}"
-  end
-end
+# 10.times do
+#   cocktail = Cocktail.new(
+#     name: Faker::Games::Zelda.character
+#   )
+#   cocktail.save
+#   puts "create #{cocktail.name} #{cocktail.id}"
+#   5.times do
+#     dose = Dose.new(
+#       description: Faker::Lorem.sentence,
+#       cocktail_id: cocktail.id,
+#       ingredient_id: Ingredient.all.sample
+#     )
+#     dose.save
+#     puts "create dose #{dose.description} #{dose.cocktail_id} #{dose.ingredient_id}"
+#   end
+# end
 
 # files = [
 #   "https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
